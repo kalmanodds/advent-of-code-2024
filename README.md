@@ -1,24 +1,13 @@
-# advent_of_code_2024
+# Advent of Code 2024
 
-[![Package Version](https://img.shields.io/hexpm/v/advent_of_code_2024)](https://hex.pm/packages/advent_of_code_2024)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/advent_of_code_2024/)
+My solutions to the _Advent of Code 2024_ challenges in Gleam.
 
-```sh
-gleam add advent_of_code_2024@1
-```
-```gleam
-import advent_of_code_2024
+## December 2024
 
-pub fn main() {
-  // TODO: An example of the project in use
-}
-```
-
-Further documentation can be found at <https://hexdocs.pm/advent_of_code_2024>.
-
-## Development
-
-```sh
-gleam run   # Run the project
-gleam test  # Run the tests
-```
+| S                      | M   | T   | W   | T   | F   | S   |
+| ---------------------- | --- | --- | --- | --- | --- | --- |
+| [1](./src/day_1.gleam) | 2   | 3   | 4   | 5   | 6   | 7   |
+| 8                      | 9   | 10  | 11  | 12  | 13  | 14  |
+| 15                     | 16  | 17  | 18  | 19  | 20  | 21  |
+| 22                     | 23  | 24  | 25  | 26  | 27  | 28  |
+| 29                     | 30  | 31  |     |     |     |     |
