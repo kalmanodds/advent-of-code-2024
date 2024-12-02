@@ -40,7 +40,7 @@ fn line_to_tuple(line: String) {
 
 fn to_sorted_int_list(list: List(String)) {
   list
-  |> to_int_list 
+  |> to_int_list
   |> list.sort(int.compare)
 }
 
@@ -57,6 +57,6 @@ fn tuple_difference(tuple: #(Int, Int)) {
 
 fn occurrences(element: Int, list: List(Int)) {
   list
-  |> list.filter(fn (x) { x == element })
+  |> list.filter(fn(x) { x == element })
   |> list.length
 }

@@ -1,6 +1,6 @@
-import simplifile
 import day_1
 import gleeunit/should
+import simplifile
 
 pub fn day_1_example_test() {
   let assert Ok(input) = simplifile.read("inputs/day_1_example.txt")
@@ -11,7 +11,7 @@ pub fn day_1_example_test() {
 pub fn day_1_input_test() {
   let assert Ok(input) = simplifile.read("inputs/day_1_input.txt")
 
-  day_1.solve_part_1(input) |> should.equal(1765812)
+  day_1.solve_part_1(input) |> should.equal(1_765_812)
 }
 
 pub fn day_1_part_2_example_test() {
@@ -23,5 +23,5 @@ pub fn day_1_part_2_example_test() {
 pub fn day_1_part_2_input_test() {
   let assert Ok(input) = simplifile.read("inputs/day_1_input.txt")
 
-  day_1.solve_part_2(input) |> should.equal(20520794)
+  day_1.solve_part_2(input) |> should.equal(20_520_794)
 }

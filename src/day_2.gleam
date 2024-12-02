@@ -1,13 +1,20 @@
-import utils
 import gleam/int
 import gleam/list
 import gleam/string
+import utils
 
 pub fn solve_part_1(input: String) {
   input
   |> string.split(on: "\r\n")
   |> list.map(line_to_int_list)
   |> list.fold(0, add_safe_lines)
+}
+
+pub fn solve_part_2(input: String) {
+  input
+  |> string.split(on: "\r\n")
+  |> list.map(line_to_int_list)
+  |> list.fold(0, add_dampened_safe_lines)
 }
 
 fn line_to_int_list(line: String) {
@@ -22,6 +29,23 @@ fn add_safe_lines(acc: Int, line: List(Int)) {
     True -> acc + 1
     False -> acc
   }
+}
+
+fn add_dampened_safe_lines(acc: Int, line: List(Int)) {
+  let last_index = list.length(line) - 1
+  let sub_lines =
+    list.range(0, last_index)
+    |> list.map(remove_element(line, _))
+
+  case sub_lines |> list.any(is_line_safe) {
+    True -> acc + 1
+    False -> acc
+  }
+}
+
+fn remove_element(list: List(Int), index: Int) {
+  let assert #(left_list, [_, ..rest]) = list.split(list, index)
+  list.flatten([left_list, rest])
 }
 
 fn is_line_safe(line: List(Int)) {
