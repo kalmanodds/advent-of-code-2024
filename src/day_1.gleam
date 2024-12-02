@@ -1,7 +1,7 @@
 import gleam/int
 import gleam/list
-import gleam/result
 import gleam/string
+import utils
 
 pub fn solve_part_1(input: String) {
   let #(left_list, right_list) =
@@ -47,11 +47,7 @@ fn to_sorted_int_list(list: List(String)) {
 fn to_int_list(list: List(String)) {
   list
   |> list.map(int.parse)
-  |> list.map(unwrap)
-}
-
-fn unwrap(result: Result(Int, Nil)) {
-  result.unwrap(result, 0)
+  |> list.map(utils.unwrap)
 }
 
 fn tuple_difference(tuple: #(Int, Int)) {
