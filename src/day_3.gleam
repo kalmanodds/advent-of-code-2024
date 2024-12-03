@@ -1,6 +1,7 @@
 import gleam/int
 import gleam/list
 import gleam/regexp
+import gleam/string
 import utils
 
 pub fn solve_part_1(input: String) {
@@ -9,6 +10,13 @@ pub fn solve_part_1(input: String) {
   |> list.map(get_number_pairs)
   |> list.map(list.fold(_, 1, int.multiply))
   |> list.fold(0, int.add)
+}
+
+pub fn solve_part_2(input: String) {
+  input
+  |> string.replace("\r\n", "")
+  |> remove_dead_conditionals()
+  |> solve_part_1()
 }
 
 fn get_mul_statements(input: String) {
@@ -23,4 +31,10 @@ fn get_number_pairs(mul_statement: String) {
   |> list.map(fn(match) { match.content })
   |> list.map(int.parse)
   |> list.map(utils.unwrap)
+}
+
+fn remove_dead_conditionals(input: String) {
+  let assert Ok(regex) =
+    regexp.from_string("don't\\(\\).*?do\\(\\)|don't\\(\\).*?\\z")
+  regexp.replace(regex, input, "")
 }
