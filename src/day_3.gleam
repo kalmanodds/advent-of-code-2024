@@ -14,7 +14,7 @@ pub fn solve_part_1(input: String) {
 
 pub fn solve_part_2(input: String) {
   input
-  |> string.replace("\r\n", "")
+  |> string.replace("\n", "")
   |> remove_dead_conditionals()
   |> solve_part_1()
 }
