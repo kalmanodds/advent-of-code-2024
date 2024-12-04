@@ -35,6 +35,6 @@ fn get_number_pairs(mul_statement: String) {
 
 fn remove_dead_conditionals(input: String) {
   let assert Ok(regex) =
-    regexp.from_string("don't\\(\\).*?do\\(\\)|don't\\(\\).*?\\z")
+    regexp.from_string("don't\\(\\).*?(do\\(\\)|\\z)")
   regexp.replace(regex, input, "")
 }
