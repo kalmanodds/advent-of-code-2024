@@ -10,4 +10,10 @@ pub fn unwrap(result: Result(Int, Nil)) {
 
 pub fn print_int_list(list: List(Int)) {
   list.map(list, int.to_string) |> string.join(", ") |> io.println()
+  list
+}
+
+pub fn print_string_list(list: List(String)) {
+  list |> list.map(io.println)
+  list
 }
